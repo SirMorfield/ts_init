@@ -1,31 +1,27 @@
-// Visit https://aka.ms/tsconfig.json to read more about this file
 {
 	"compilerOptions": {
 		"target": "ES2022",
 		"module": "commonjs",
-		// "checkJs": true,
 		"outDir": "./build/",
 		"rootDir": "./src/",
-		"removeComments": true,
-		"downlevelIteration": false,
-		"strict": true,
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"strictBindCallApply": true,
-		"strictPropertyInitialization": true,
-		"noImplicitThis": true,
+
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
 		"alwaysStrict": true,
-		"noUnusedLocals": true,
-		"noImplicitReturns": true,
+		"checkJs": true,
+		"forceConsistentCasingInFileNames": true,
 		"noFallthroughCasesInSwitch": true,
-		"noUncheckedIndexedAccess": true,
+		"noImplicitAny": true,
 		"noPropertyAccessFromIndexSignature": true,
-		"esModuleInterop": true,
-		"preserveSymlinks": true,
-		"skipLibCheck": true,
-		// "sourceMap": true, //debugger
-		"forceConsistentCasingInFileNames": true
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"removeComments": true,
+		"resolveJsonModule": true,
+		"strict": true,
+
+		"skipLibCheck": true, // skip checking types in node_modules
+		// "sourceMap": true, // enable debugger
 	},
 	"include": ["src/"]
 }
