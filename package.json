@@ -12,7 +12,8 @@
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
 		"build": "tsc",
 		"lint": "eslint src/",
-		"lint:fix": "eslint --fix src/",
+		"lint:check": "eslint --max-warnings 0 src",
+		"lint:fix": "eslint --fix src",
 		"start": "node build/app.js"
 	}
 }
