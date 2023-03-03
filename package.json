@@ -1,4 +1,7 @@
 {
+	"name": "ts_init",
+	"author": "Joppe Koers",
+	"license": "ISC",
 	"scripts": {
 		"prepare": "node -v | grep v18 || (echo 'Wrong Node version' && exit 1); [ -d .git ] && cp scripts/hooks/* .git/hooks",
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
