@@ -1,4 +1,12 @@
 {
+	"scripts": {
+		"prepare": "node -v | grep v18 || (echo 'Wrong Node version' && exit 1); [ -d .git ] && cp scripts/hooks/* .git/hooks",
+		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
+		"build": "npm run lint:check && tsc",
+		"start": "node build/app.js",
+		"lint:check": "eslint --max-warnings 0 src; prettier --check src",
+		"lint:fix": "eslint --fix src; prettier --write src"
+	},
 	"devDependencies": {
 		"@types/node": "^18.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.48.2",
@@ -9,12 +17,7 @@
 		"ts-node-dev": "^2.0.0",
 		"typescript": "^4.9.4"
 	},
-	"scripts": {
-		"prepare": "node -v | grep v18 || (echo 'Wrong Node version' && exit 1); [ -d .git ] && cp scripts/hooks/* .git/hooks",
-		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
-		"build": "tsc",
-		"start": "node build/app.js",
-		"lint:check": "eslint --max-warnings 0 src; prettier --check src",
-		"lint:fix": "eslint --fix src; prettier --write src"
+	"dependencies": {
+		"nodemon": "^2.0.20"
 	}
 }

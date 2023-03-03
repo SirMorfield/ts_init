@@ -32,6 +32,7 @@ module.exports = {
 		'prefer-const': 'error',
 		'prefer-template': 'error',
 		'require-await': 'error',
+		'no-constant-condition': ["error", { "checkLoops": false }],
 		eqeqeq: ['error', 'smart'],
 
 		// managed by prettier
