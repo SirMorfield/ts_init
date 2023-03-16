@@ -32,8 +32,9 @@ module.exports = {
 		'prefer-const': 'error',
 		'prefer-template': 'error',
 		'require-await': 'error',
-		'no-constant-condition': ["error", { "checkLoops": false }],
+		'no-constant-condition': ['error', { 'checkLoops': false }],
 		eqeqeq: ['error', 'smart'],
+		'@typescript-eslint/ban-ts-comment': 'off',
 
 		// managed by prettier
 		// indent: ['error', 'tab'],
