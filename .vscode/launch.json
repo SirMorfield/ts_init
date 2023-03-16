@@ -6,7 +6,7 @@
 			"name": "Launch app",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceFolder}/src/app.ts",
+			"program": "${workspaceFolder}/build/app.js",
 			"preLaunchTask": "npm: build",
 			"console": "integratedTerminal",
 			"outFiles": [
