@@ -10,4 +10,4 @@ RUN npm run build
 RUN rm -rf src
 
 EXPOSE 8080
-CMD [ "node", "build/server.js" ]
+CMD [ "node", "build/app.js" ]
