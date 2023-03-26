@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  ts_init:
+    container_name: ts_init
+    image: ghcr.io/sirmorfield/ts_init/ts_init:latest
+
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    command: --interval 10 ts_init
