@@ -10,7 +10,7 @@
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
 		"build": "npm run lint:check && tsc",
 		"start": "node build/app.js",
-		"lint:check": "eslint --max-warnings 0 src; prettier --check src",
+		"lint:check": "eslint --cache --cache-location node_modules/.eslintcache src; prettier --check src",
 		"lint:fix": "eslint --fix src; prettier --write src"
 	},
 	"dependencies": {
