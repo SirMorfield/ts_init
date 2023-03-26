@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/ts_init:${{ github.sha }} .
+        run: docker build -t docker.pkg.github.com/sirmorfield/ts_init:${{ github.sha }} .
 
       - name: Push Docker image to GitHub Package Registry
-        run: docker push docker.pkg.github.com/${{ github.repository }}/ts_init:${{ github.sha }}
+        run: docker push docker.pkg.github.com/sirmorfield/ts_init:${{ github.sha }}
