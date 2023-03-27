@@ -3,12 +3,20 @@ version: '3'
 services:
   ts_init:
     container_name: ts_init
+    restart: unless-stopped
     image: ghcr.io/sirmorfield/ts_init/ts_init:latest
+    environment:
+      - NODE_ENV=production
 
   watchtower:
     container_name: watchtower
     image: containrrr/watchtower
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    restart: always
-    command: --interval 10 ts_init
+    command: ts_init
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+      - WATCHTOWER_POLL_INTERVAL=30
+      - WATCHTOWER_ROLLING_RESTART=true
