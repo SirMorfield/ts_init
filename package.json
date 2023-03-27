@@ -1,14 +1,11 @@
 {
-	"name": "@sirmorfield/ts_init",
-	"author": "Joppe Koers",
-	"license": "ISC",
-	"module": "ESNext",
-	"moduleResolution": "node",
-	"type": "module",
-	"exports": "./build/app.js",
+	"name": "my-package",
+	"version": "1.0.0",
+	"description": "My Node.js package",
+	"main": "build/app.js",
 	"scripts": {
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
-		"build": "npm run lint:check && tsc",
+		"build": "tsc",
 		"start": "node build/app.js",
 		"lint:check": "eslint --cache --cache-location node_modules/.eslintcache src; prettier --check src",
 		"lint:fix": "eslint --fix src; prettier --write src"
