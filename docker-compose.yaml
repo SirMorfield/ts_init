@@ -5,8 +5,6 @@ services:
     container_name: ts_init
     restart: unless-stopped
     image: ghcr.io/sirmorfield/ts_init/ts_init:latest
-    environment:
-      - NODE_ENV=production
 
   watchtower:
     container_name: watchtower
