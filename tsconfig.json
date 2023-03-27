@@ -19,6 +19,7 @@
 		"removeComments": true,
 		"resolveJsonModule": true,
 		"strict": true,
+		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true, // skip checking types in node_modules
 		// "sourceMap": true, // enable debugger
 	},
