@@ -8,11 +8,13 @@
 		// "declaration": true,
 
 		// code quality options
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
-		"allowJs": false,
 		"forceConsistentCasingInFileNames": true,
+		"ignoreDeprecations": "5.0",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": true,
 		"noPropertyAccessFromIndexSignature": true,
@@ -21,14 +23,11 @@
 		"noUnusedParameters": true,
 		"removeComments": true,
 		"resolveJsonModule": true,
-		"strict": true,
-		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true, // skip type checking of all .d.ts files
-		// "sourceMap": true, // enable debugger
+		"sourceMap": true, // enable debugger
+		"strict": true
 	},
-	"include": [
-		"src/"
-	],
+	"include": ["src/"],
 	"ts-node": {
 		"esm": true
 	}
