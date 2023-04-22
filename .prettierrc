@@ -4,5 +4,6 @@
 	"bracketSameLine": true,
 	"printWidth": 180,
 	"useTabs": true,
-	"arrowParens": "avoid"
+	"arrowParens": "avoid",
+	"trailingComma": "all"
 }

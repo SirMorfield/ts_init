@@ -7,8 +7,8 @@
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
 		"build": "tsc",
 		"start": "node build/app.js",
-		"lint:check": "eslint --cache --cache-location node_modules/.eslintcache src; prettier --check src",
-		"lint:fix": "eslint --fix src; prettier --write src"
+		"lint:check": "eslint --cache --cache-location node_modules/.eslintcache .; prettier --check .",
+		"lint:fix": "eslint --cache --cache-location node_modules/.eslintcache --fix .; prettier --write ."
 	},
 	"dependencies": {
 		"@types/node": "^18.0.1",

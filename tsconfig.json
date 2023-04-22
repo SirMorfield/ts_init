@@ -14,7 +14,6 @@
 		"allowUnusedLabels": false,
 		"alwaysStrict": true,
 		"forceConsistentCasingInFileNames": true,
-		"ignoreDeprecations": "5.0",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": true,
 		"noPropertyAccessFromIndexSignature": true,
