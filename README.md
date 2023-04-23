@@ -1,12 +1,13 @@
 # TS init
 
-A template repository for TypeScript projects.
+A template repository for TypeScript projects\
+Because the whole JS build system is quite confusing
 
 # Features
 
 - eslint
 - eslint caching
-- prettier
+- prettier (as subset of eslint so you can use eslint --fix and not have to also run prettier)
 - Lining check in github pipeline
 - pre-commit hook for linting
 - containerized by docker
@@ -18,3 +19,6 @@ A template repository for TypeScript projects.
 
 - Caching in docker (compose)
 - Maybe run pipeline locally
+- Improve the containerize.yaml to also support tags
+- Add playwright/jest testing
+- Run test suite in pipeline
