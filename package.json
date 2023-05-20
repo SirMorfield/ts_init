@@ -7,8 +7,8 @@
 		"dev": "ts-node-dev --quiet --clear --rs --respawn src/app.ts",
 		"build": "tsc",
 		"start": "node build/app.js",
-		"lint": "eslint --cache --cache-location node_modules/.eslintcache .",
-		"lint:fix": "eslint --cache --cache-location node_modules/.eslintcache --fix ."
+		"lint:check": "DEBUG=eslint:cli-engine eslint --cache --cache-location node_modules/.eslintcache .",
+		"lint:fix": "DEBUG=eslint:cli-engine eslint --cache --cache-location node_modules/.eslintcache --fix ."
 	},
 	"dependencies": {
 		"@types/node": "^18.0.1",
