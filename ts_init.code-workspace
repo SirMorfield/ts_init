@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "root",
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+	}
+}

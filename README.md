@@ -16,9 +16,9 @@ Because the whole JS build system is quite confusing
 - ES module
 
 # TODO
-
+- Use multi stage build to reduce image size
 - Caching in docker (compose)
-- Maybe run pipeline locally
+- Run pipeline locally
 - Improve the containerize.yaml to also support tags
 - Add playwright/jest testing
 - Run test suite in pipeline
