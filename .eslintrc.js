@@ -5,7 +5,7 @@ module.exports = {
 		node: true,
 	},
 	parser: '@typescript-eslint/parser',
-	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'prettier'],
+	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'prettier'], // The 'prettier' element must be last
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
@@ -28,23 +28,11 @@ module.exports = {
 		'no-useless-escape': 'error',
 		'no-useless-return': 'error',
 		'no-var': 'error',
-		'prefer-arrow-callback': 'error',
 		'prefer-const': 'error',
 		'prefer-template': 'error',
 		'require-await': 'error',
 		'no-constant-condition': ['error', { checkLoops: false }],
 		eqeqeq: ['error', 'smart'],
 		'@typescript-eslint/ban-ts-comment': 'off',
-
-		// managed by prettier
-		// indent: ['error', 'tab'],
-		// 'linebreak-style': ['error', 'unix'],
-		// quotes: ['error', 'single'],
-		// semi: ['error', 'never'],
-		// 'max-len': ['error', { code: 120, ignoreUrls: true }],
-		// 'arrow-parens': ['error', 'as-needed'],
-		// 'brace-style': ['error', 'stroustrup'],
-		// 'comma-dangle': ['error', 'always-multiline'],
-		// curly: ['error', 'multi-or-nest'],
 	},
 }
