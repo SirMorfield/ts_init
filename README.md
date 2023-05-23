@@ -3,6 +3,8 @@
 A template repository for TypeScript projects\
 Because the whole JS build system is quite confusing
 
+Svelte version: https://github.com/SirMorfield/svelte_init
+
 # Features
 
 - eslint
@@ -16,6 +18,7 @@ Because the whole JS build system is quite confusing
 - ES module
 
 # TODO
+
 - Use multi stage build to reduce image size
 - Caching in docker (compose)
 - Run pipeline locally
