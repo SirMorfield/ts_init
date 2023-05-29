@@ -1,12 +1,14 @@
 # TS init
-
 A template repository for TypeScript projects\
 Because the whole JS build system is quite confusing
 
 Svelte version: https://github.com/SirMorfield/svelte_init
 
-# Features
+# Usage
+- Install the `dbaeumer.vscode-eslint` extension
+- Make sure you disable the `esbenp.prettier-vscode` extension if you have it installed
 
+# Features
 - eslint
 - eslint caching
 - prettier (as subset of eslint so you can use eslint --fix and not have to also run prettier)
@@ -18,7 +20,6 @@ Svelte version: https://github.com/SirMorfield/svelte_init
 - ES module
 
 # TODO
-
 - Use multi stage build to reduce image size
 - Caching in docker (compose)
 - Run pipeline locally
