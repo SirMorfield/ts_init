@@ -9,7 +9,9 @@
 			"program": "${workspaceFolder}/build/app.js",
 			"preLaunchTask": "npm: build",
 			"console": "integratedTerminal",
-			"outFiles": ["${workspaceFolder}/build/**/*.js"]
+			"outFiles": [
+				"${workspaceFolder}/build/**/*.js"
+			]
 		}
 	]
 }
