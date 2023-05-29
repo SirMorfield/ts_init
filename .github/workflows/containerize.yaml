@@ -5,23 +5,34 @@ on:
     branches:
       - main
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ghcr.io/${{ github.repository }}/ts_init
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Login to GitHub Package Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2.1.0
         with:
-          registry: docker.pkg.github.com
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t docker.pkg.github.com/sirmorfield/ts_init/ts_init:latest .
+      # can be removed if the username is lowercase and the repository name are lowercase
+      - name: Set lower case owner name
+        run: echo "IMAGE_NAME=${IMAGE_NAME,,}" >> ${GITHUB_ENV}
+        env:
+          IMAGE_NAME: '${{ env.IMAGE_NAME }}'
 
-      - name: Push Docker image to GitHub Package Registry
-        run: docker push docker.pkg.github.com/sirmorfield/ts_init/ts_init:latest
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ env.IMAGE_NAME }}
