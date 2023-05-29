@@ -7,16 +7,21 @@
 #		/svelte_init
 
 cd "${0%/*}"   # move to current directory, so execution is always relative to this file
-set -o xtrace  # Print commands as they are executed
+# set -o xtrace  # Print commands as they are executed
 set -o errexit # Exit on error
 
-other_project="../svelte_init"
-[ -d "$other_project" ] || echo "Directory $other_project does not exist"
+function exit_with_message() {
+	echo "$1"
+	exit 1
+}
+
+other_project="$1"
+[ -d "$other_project" ] || exit_with_message "Directory \"$other_project\" does not exist"
 
 function open_compare()	{
-	[ -f "$1" ] || echo "File $1 does not exist"
+	[ -f "$1" ] || exit_with_message "File $1 does not exist"
 	other="$other_project/$1"
-	[ -f "$other" ] || echo "File $other does not exist"
+	[ -f "$other" ] || exit_with_message "File $other does not exist"
 
 	echo "Comparing $1 and $other"
 	code --wait --diff "$1" "$other"
