@@ -22,7 +22,7 @@
 		"removeComments": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true, // skip type checking of all .d.ts files
-		"sourceMap": false, // enable debugger
+		// "sourceMap": false, // enable debugger
 		"strict": true
 	},
 	"include": [

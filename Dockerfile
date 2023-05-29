@@ -1,16 +1,28 @@
-FROM node:18-alpine
-
+# ============== DEPS ===============
+FROM node:18-alpine as dependencies
 WORKDIR /app
 
-# HEALTHCHECK --interval=5s --timeout=10s --start-period=5s --retries=1 CMD wget -q -O - http://localhost:8080/
-# EXPOSE 8080
+# ========== BUILDER MAIN ===========
+FROM dependencies as builder-main
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . ./
+RUN npm run lint:check
+# RUN npm run test # TODO: enable
 
 ENV NODE_ENV=production
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
-COPY . .
 RUN npm run build
-RUN rm -rf src
+RUN npm prune --production
 
-USER node
-ENTRYPOINT [ "npm", "start" ]
+# =============== MAIN ===============
+FROM node:18-alpine as main
+ENV NODE_ENV=production
+WORKDIR /app
+
+COPY --from=builder-main /app/node_modules ./node_modules
+COPY --from=builder-main /app/build ./build
+COPY --from=builder-main /app/package.json ./
+
+ENTRYPOINT [ "npm", "run", "start" ]
