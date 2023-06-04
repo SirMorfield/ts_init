@@ -17,7 +17,7 @@ RUN npm run build
 RUN npm prune --production
 
 # =============== MAIN ===============
-FROM gcr.io/distroless/nodejs:18 as frontend
+FROM gcr.io/distroless/nodejs:18 as main
 ENV NODE_ENV=production
 WORKDIR /app
 

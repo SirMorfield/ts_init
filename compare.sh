@@ -28,13 +28,13 @@ function open_compare()	{
 }
 
 # SECTION OF INTEREST
-open_compare .github/workflows/containerize.yaml
-open_compare .dockerignore
-open_compare .eslintrc.js
-open_compare .gitignore
-open_compare .npmrc
-open_compare .prettierrc
-open_compare docker-compose.yaml
+# open_compare .github/workflows/containerize.yaml
+# open_compare .dockerignore
+# open_compare .eslintrc.js
+# open_compare .gitignore
+# open_compare .npmrc
+# open_compare .prettierrc
+# open_compare docker-compose.yaml
 open_compare Dockerfile
 open_compare tsconfig.json
 open_compare workspace.code-workspace
