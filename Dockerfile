@@ -21,8 +21,8 @@ FROM gcr.io/distroless/nodejs:18 as main
 ENV NODE_ENV=production
 WORKDIR /app
 
+COPY --from=builder-main /app/package.json ./
 COPY --from=builder-main /app/node_modules ./node_modules
 COPY --from=builder-main /app/build ./build
-COPY --from=builder-main /app/package.json ./
 
 CMD [ "build/app.js" ]
